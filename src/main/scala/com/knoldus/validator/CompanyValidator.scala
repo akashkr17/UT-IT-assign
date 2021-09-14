@@ -14,11 +14,10 @@ class CompanyValidator(companyRead: CompanyReadto,
     val companyValidate = companyRead.getCompanyByName(company.name)
 
     /** *
-     * returns true if email is valid and company not exist in db
-     * else returns false
-     *
-     */
-
+      * returns true if email is valid and company not exist in db
+      * else returns false
+      *
+      */
     (emailValidate, companyValidate) match {
       case (true, None) =>
         true

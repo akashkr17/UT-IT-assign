@@ -25,7 +25,7 @@ sudo apt-get install sbt
 ```
 #### 3.Verify the installation by running command:
 ```bash
-sbt sbtversion
+sbt sbt version
 ```
 
 # Usage

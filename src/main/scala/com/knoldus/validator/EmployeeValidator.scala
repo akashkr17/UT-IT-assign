@@ -15,9 +15,11 @@ class EmployeeValidator(companyReadto: CompanyReadto,
       * returns true if valid emailid and campany exit in db
       * else returns false
       */
-    if (emailValidate && companyValidate != None) {
-      true
-    } else
-      false
+    (emailValidate, companyValidate) match {
+      case (true, Some(value)) =>
+        true
+      case _ =>
+        false
+    }
   }
 }

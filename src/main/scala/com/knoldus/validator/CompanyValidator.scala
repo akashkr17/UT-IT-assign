@@ -1,5 +1,7 @@
 package com.knoldus.validator
 
+import java.security.KeyStore.TrustedCertificateEntry
+
 import com.knoldus.db.CompanyReadto
 import com.knoldus.models.Company
 
@@ -12,16 +14,17 @@ class CompanyValidator(companyRead: CompanyReadto,
     val companyValidate = companyRead.getCompanyByName(company.name)
 
     /** *
-      * returns true if email is valid and company not exist in db
-      * else returns false
-      *
-      */
-    println(emailValidate, companyValidate)
+     * returns true if email is valid and company not exist in db
+     * else returns false
+     *
+     */
 
-    if (emailValidate && companyValidate == None) {
-      true
-    } else
-      false
+    (emailValidate, companyValidate) match {
+      case (true, None) =>
+        true
+      case _ =>
+        false
+    }
   }
 
 }
